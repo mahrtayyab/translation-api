@@ -130,7 +130,7 @@ Use this endpoint to get the translation of your desired material
 #### Required Parameters
 * q : str -> actual string which is to be translated
 * from : str -> what is the [language](#supported-languages) of your actual string which is to be translated
-> NOTE : You can Enter "all" in the 'from' query parameter if you are not certain about the Language
+> NOTE : You can Enter "auto" in the 'from' query parameter if you are not certain about the Language
 * to : str -> what is the [language](#supported-languages) in which you want to translate your string
 
 #### API Endpoint
