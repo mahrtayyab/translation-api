@@ -129,14 +129,14 @@ This is an API can be used to Translate the words, paragraph and sentences into 
 Use this endpoint to get the translation of your desired material 
 #### Required Parameters
 * q : str -> actual string which is to be translated
-* from : str -> what is the [language](#supported-languages) of your actual string which is to be translated
-> NOTE : You can Enter "auto" in the 'from' query parameter if you are not certain about the Language
-* to : str -> what is the [language](#supported-languages) in which you want to translate your string
+* source_lang : str -> what is the [language](#supported-languages) of your actual string which is to be translated
+> NOTE : You can Enter "auto" in the 'source_lang' query parameter if you are not certain about the Language
+* target_lang : str -> what is the [language](#supported-languages) in which you want to translate your string
 
 #### API Endpoint
 * **GET METHOD**
 ```
-https://factory-apis.herokuapp.com/api/translate?q=Hola&from=auto&to=en
+https://factory-apis.up.railway.app/api/translator/translate?q=Hola&source_lang=auto&target_lang=en
 ```
 * **POST METHOD**
 > NOTE: THis is the recommended method when your string is too large
@@ -147,8 +147,8 @@ https://factory-apis.herokuapp.com/api/translate?q=Hola&from=auto&to=en
 import requests
 data = {
     "q":"Hola",
-    "from":"auto",
-    "to":"en"
+    "source_lang":"auto",
+    "target_lang":"en"
 }
 r = requests.post("https://factory-apis.herokuapp.com/api/translate",data=data)
 ```
@@ -158,9 +158,8 @@ r = requests.post("https://factory-apis.herokuapp.com/api/translate",data=data)
 * Structure
 ```json
 {
-    "detected_language": "es",
-    "language_detection_confidence": "100.0%",
+    "detected_language": "Spanish (es)",
     "sentences": "Hello There",
-    "translated_to": "en"
+    "translated_to": "English (en)"
 }
 ```
